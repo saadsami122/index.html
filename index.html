@@ -1,528 +1,170 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>NEXORA Advisory | استشارات دخول السوق والاستثمار</title>
-    <meta name="description" content="NEXORA Advisory منصة استشارية متخصصة في دخول السوق السعودي، الاستراتيجية، الاستثمار وتطوير الأعمال.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-    <!-- Navigation -->
-    <header class="navbar">
-        <div class="container nav-inner">
-
-            <a href="#home" class="logo">
-                <span class="logo-mark">N</span>
-                <span class="logo-text">NEXORA</span>
-            </a>
+/* =========================
+   LANGUAGE SWITCHER
+========================= */
 
-            <nav class="nav-links">
-                <a href="#about" data-ar="من نحن" data-en="About">من نحن</a>
-                <a href="#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a>
-                <a href="#sectors" data-ar="القطاعات" data-en="Sectors">القطاعات</a>
-                <a href="#investors" data-ar="للمستثمرين" data-en="For Investors">للمستثمرين</a>
-                <a href="#contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
-            </nav>
-
-            <div class="nav-actions">
-                <button id="languageToggle" class="lang-btn">EN</button>
-                <a href="#contact" class="nav-cta" data-ar="اطلب استشارة" data-en="Request Advisory">
-                    اطلب استشارة
-                </a>
-            </div>
-
-        </div>
-    </header>
-
-
-    <!-- Hero -->
-    <main>
-
-        <section id="home" class="hero">
-            <div class="hero-pattern"></div>
-
-            <div class="container hero-grid">
-
-                <div class="hero-content">
-
-                    <span class="eyebrow"
-                          data-ar="استشارات استراتيجية • دخول الأسواق • استثمار"
-                          data-en="Strategy • Market Entry • Investment">
-                        استشارات استراتيجية • دخول الأسواق • استثمار
-                    </span>
-
-                    <h1>
-                        نُمكّن الطموح من
-                        <span>دخول السوق السعودي.</span>
-                    </h1>
-
-                    <p class="hero-description"
-                       data-ar="منصة استشارية تساعد المستثمرين والشركات الطموحة على فهم السوق السعودي، بناء استراتيجيات الدخول، وتحويل الفرص إلى نمو مستدام."
-                       data-en="A strategic advisory platform helping investors and ambitious companies understand the Saudi market, build entry strategies and turn opportunities into sustainable growth.">
-                        منصة استشارية تساعد المستثمرين والشركات الطموحة على فهم السوق السعودي، بناء استراتيجيات الدخول، وتحويل الفرص إلى نمو مستدام.
-                    </p>
-
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary"
-                           data-ar="ابدأ محادثة استراتيجية"
-                           data-en="Start a Strategic Conversation">
-                            ابدأ محادثة استراتيجية
-                        </a>
-
-                        <a href="#services" class="btn btn-secondary"
-                           data-ar="استكشف خدماتنا"
-                           data-en="Explore Our Services">
-                            استكشف خدماتنا
-                        </a>
-                    </div>
-
-                </div>
+const languageToggle = document.getElementById("languageToggle");
 
-
-                <div class="hero-card">
-
-                    <div class="card-top">
-                        <span>01</span>
-                        <span>SAUDI ARABIA</span>
-                    </div>
-
-                    <div class="card-center">
-                        <div class="compass">
-                            <div class="compass-line"></div>
-                            <div class="compass-dot"></div>
-                        </div>
+let currentLanguage = "ar";
 
-                        <h3>Market Intelligence</h3>
+languageToggle.addEventListener("click", () => {
 
-                        <p>
-                            Insight before investment.
-                        </p>
-                    </div>
-
-                    <div class="card-bottom">
-                        <span>Riyadh</span>
-                        <span>Jeddah</span>
-                        <span>NEOM</span>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- About -->
-        <section id="about" class="section about-section">
-
-            <div class="container">
-
-                <div class="section-heading">
-                    <span class="section-number">01</span>
-                    <span class="section-label"
-                          data-ar="من نحن"
-                          data-en="About Us">
-                        من نحن
-                    </span>
-                </div>
-
-                <div class="about-grid">
-
-                    <div>
-                        <h2>
-                            نربط <em>الفرص</em><br>
-                            بالقرارات الصحيحة.
-                        </h2>
-                    </div>
-
-                    <div class="about-text">
-                        <p>
-                            NEXORA Advisory هي منصة استشارية ناشئة تركز على مساعدة المستثمرين والشركات في فهم الأسواق، تقييم الفرص، وبناء استراتيجيات عملية للنمو والتوسع.
-                        </p>
-
-                        <p>
-                            نعمل بعقلية استراتيجية تجمع بين فهم السوق المحلي والمنظور العالمي، مع تركيز خاص على المملكة العربية السعودية والتحولات الاقتصادية التي تقودها رؤية 2030.
-                        </p>
-
-                        <div class="about-values">
-                            <div>
-                                <strong>01</strong>
-                                <span>وضوح استراتيجي</span>
-                            </div>
-
-                            <div>
-                                <strong>02</strong>
-                                <span>فهم عميق للسوق</span>
-                            </div>
-
-                            <div>
-                                <strong>03</strong>
-                                <span>قرارات قابلة للتنفيذ</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- Services -->
-        <section id="services" class="section services-section">
-
-            <div class="container">
-
-                <div class="section-heading">
-                    <span class="section-number">02</span>
-                    <span class="section-label">خدماتنا</span>
-                </div>
-
-                <div class="services-intro">
-                    <h2>
-                        من السؤال الاستراتيجي<br>
-                        إلى <span>القرار.</span>
-                    </h2>
-
-                    <p>
-                        حلول استشارية مصممة للشركات والمستثمرين الذين يبحثون عن وضوح أكبر وفرص نمو أفضل.
-                    </p>
-                </div>
-
-
-                <div class="services-grid">
-
-                    <article class="service-card">
-                        <span>01</span>
-                        <h3>Market Entry</h3>
-                        <p>
-                            تصميم استراتيجية دخول السوق وتحديد الفرص، المنافسين، العملاء وقنوات الوصول.
-                        </p>
-                        <div class="arrow">↗</div>
-                    </article>
-
-                    <article class="service-card">
-                        <span>02</span>
-                        <h3>Market Intelligence</h3>
-                        <p>
-                            تحليل الأسواق والقطاعات والاتجاهات لمساعدة صناع القرار على التحرك بثقة.
-                        </p>
-                        <div class="arrow">↗</div>
-                    </article>
-
-                    <article class="service-card">
-                        <span>03</span>
-                        <h3>Investment Advisory</h3>
-                        <p>
-                            دعم المستثمرين في تقييم الفرص وفهم البيئة التجارية والسوقية.
-                        </p>
-                        <div class="arrow">↗</div>
-                    </article>
-
-                    <article class="service-card">
-                        <span>04</span>
-                        <h3>Business Strategy</h3>
-                        <p>
-                            بناء استراتيجيات النمو والتوسع وتحويل الرؤية إلى خطط قابلة للتنفيذ.
-                        </p>
-                        <div class="arrow">↗</div>
-                    </article>
-
-                    <article class="service-card">
-                        <span>05</span>
-                        <h3>Due Diligence</h3>
-                        <p>
-                            تحليل تجاري واستراتيجي لدعم القرارات الاستثمارية والشراكات المحتملة.
-                        </p>
-                        <div class="arrow">↗</div>
-                    </article>
-
-                    <article class="service-card">
-                        <span>06</span>
-                        <h3>Business Development</h3>
-                        <p>
-                            تطوير فرص الشراكات والتوسع وربط الشركات بالفرص المناسبة.
-                        </p>
-                        <div class="arrow">↗</div>
-                    </article>
+    currentLanguage = currentLanguage === "ar" ? "en" : "ar";
 
-                </div>
-
-            </div>
-        </section>
+    document.documentElement.lang = currentLanguage;
 
+    if (currentLanguage === "ar") {
+        document.documentElement.dir = "rtl";
+        document.body.classList.remove("en");
+        languageToggle.textContent = "EN";
+    } else {
+        document.documentElement.dir = "ltr";
+        document.body.classList.add("en");
+        languageToggle.textContent = "AR";
+    }
 
-        <!-- Saudi Vision -->
-        <section class="vision-section">
+    document.querySelectorAll("[data-ar]").forEach(element => {
 
-            <div class="container vision-grid">
+        const arabicText = element.getAttribute("data-ar");
+        const englishText = element.getAttribute("data-en");
 
-                <div>
-                    <span class="eyebrow">SAUDI ARABIA • VISION 2030</span>
-
-                    <h2>
-                        المملكة ليست سوقًا فقط.
-                        <span>إنها فرصة.</span>
-                    </h2>
-                </div>
+        if (currentLanguage === "ar") {
+            element.textContent = arabicText;
+        } else {
+            element.textContent = englishText;
+        }
 
-                <div>
-                    <p>
-                        نؤمن بأن التحولات الاقتصادية في المملكة تفتح مساحة استثنائية للشركات والمستثمرين الذين يمتلكون الرؤية والقدرة على التنفيذ.
-                    </p>
+    });
 
-                    <p>
-                        دورنا هو مساعدة عملائنا على قراءة هذه التحولات وتحويلها إلى قرارات وفرص قابلة للنمو.
-                    </p>
-                </div>
+});
 
-            </div>
 
-        </section>
+/* =========================
+   CONTACT FORM
+========================= */
 
+const contactForm = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
 
-        <!-- Sectors -->
-        <section id="sectors" class="section sectors-section">
+contactForm.addEventListener("submit", function(event) {
 
-            <div class="container">
+    event.preventDefault();
 
-                <div class="section-heading">
-                    <span class="section-number">03</span>
-                    <span class="section-label">القطاعات</span>
-                </div>
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
 
-                <div class="sectors-grid">
+    if (!name || !email) {
 
-                    <div class="sector">01 <span>Investment</span></div>
-                    <div class="sector">02 <span>Technology</span></div>
-                    <div class="sector">03 <span>Energy</span></div>
-                    <div class="sector">04 <span>Real Estate</span></div>
-                    <div class="sector">05 <span>Healthcare</span></div>
-                    <div class="sector">06 <span>Financial Services</span></div>
-                    <div class="sector">07 <span>Tourism & Hospitality</span></div>
-                    <div class="sector">08 <span>Consumer & Retail</span></div>
+        formMessage.style.color = "#b33a3a";
 
-                </div>
+        formMessage.textContent =
+            currentLanguage === "ar"
+                ? "فضلاً أدخل الاسم والبريد الإلكتروني."
+                : "Please enter your name and email.";
 
-            </div>
-        </section>
+        return;
+    }
 
 
-        <!-- Investors -->
-        <section id="investors" class="investors-section">
+    /*
+        ملاحظة:
 
-            <div class="container investor-grid">
+        هذا الإصدار Front-End فقط.
 
-                <div>
-                    <span class="eyebrow">FOR INVESTORS</span>
+        عند ربط الموقع بخدمة استقبال النماذج
+        مثل Formspree أو خدمة Backend خاصة بك،
+        يتم إرسال البيانات هنا إلى الخادم.
+    */
 
-                    <h2>
-                        تريد فهم السوق
-                        <span>قبل أن تستثمر؟</span>
-                    </h2>
-                </div>
 
-                <div>
-                    <p>
-                        نساعد المستثمرين على بناء صورة أوضح عن السوق والفرص والمخاطر والبيئة التنافسية قبل اتخاذ القرار.
-                    </p>
+    formMessage.style.color = "#0c3b32";
 
-                    <a href="#contact" class="text-link">
-                        تحدث مع أحد مستشارينا
-                        <span>↗</span>
-                    </a>
-                </div>
+    formMessage.textContent =
+        currentLanguage === "ar"
+            ? "تم استلام طلبك بنجاح. سنتواصل معك قريبًا."
+            : "Your request has been received. We will contact you shortly.";
 
-            </div>
+    contactForm.reset();
 
-        </section>
+});
 
 
-        <!-- Network -->
-        <section class="network-section">
+/* =========================
+   NAVBAR SCROLL EFFECT
+========================= */
 
-            <div class="container">
+const navbar = document.querySelector(".navbar");
 
-                <div class="section-heading">
-                    <span class="section-number">04</span>
-                    <span class="section-label">شبكتنا المهنية</span>
-                </div>
+window.addEventListener("scroll", () => {
 
-                <div class="network-content">
+    if (window.scrollY > 30) {
+        navbar.style.boxShadow = "0 8px 30px rgba(0,0,0,.06)";
+    } else {
+        navbar.style.boxShadow = "none";
+    }
 
-                    <p>
-                        خبرات وشبكات مهنية تمتد عبر منظومة الاستشارات والاستثمار العالمية.
-                    </p>
+});
 
-                    <div class="network-names">
-                        <span>McKinsey & Company</span>
-                        <span>BCG</span>
-                        <span>Bain & Company</span>
-                    </div>
 
-                    <small>
-                        يتم عرض الأسماء لأغراض توضيحية فقط ولا تعني وجود شراكة تجارية رسمية ما لم يتم الاتفاق عليها.
-                    </small>
+/* =========================
+   REVEAL ANIMATION
+========================= */
 
-                </div>
+const revealElements = document.querySelectorAll(
+    ".service-card, .sector, .about-grid, .contact-form, .hero-card"
+);
 
-            </div>
+const revealObserver = new IntersectionObserver(
+    (entries) => {
 
-        </section>
+        entries.forEach(entry => {
 
+            if (entry.isIntersecting) {
 
-        <!-- Contact -->
-        <section id="contact" class="contact-section">
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
 
-            <div class="container contact-grid">
+                revealObserver.unobserve(entry.target);
+            }
 
-                <div class="contact-intro">
+        });
 
-                    <span class="eyebrow">LET'S TALK</span>
+    },
+    {
+        threshold: 0.12
+    }
+);
 
-                    <h2>
-                        لديك فرصة أو
-                        <span>تحدٍ استراتيجي؟</span>
-                    </h2>
 
-                    <p>
-                        أخبرنا قليلًا عن احتياجك، وسيتواصل معك أحد أعضاء فريقنا لمناقشة الخطوة التالية.
-                    </p>
+revealElements.forEach(element => {
 
-                </div>
+    element.style.opacity = "0";
+    element.style.transform = "translateY(25px)";
+    element.style.transition = "opacity .7s ease, transform .7s ease";
 
+    revealObserver.observe(element);
 
-                <form id="contactForm" class="contact-form">
+});
 
-                    <div class="form-row">
 
-                        <div class="form-group">
-                            <label for="name">الاسم</label>
-                            <input type="text" id="name" name="name" required placeholder="اسمك الكامل">
-                        </div>
+/* =========================
+   SMOOTH NAVIGATION
+========================= */
 
-                        <div class="form-group">
-                            <label for="company">الشركة</label>
-                            <input type="text" id="company" name="company" placeholder="اسم الشركة">
-                        </div>
+document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-                    </div>
+    link.addEventListener("click", function(event) {
 
+        const target = document.querySelector(this.getAttribute("href"));
 
-                    <div class="form-row">
+        if (!target) return;
 
-                        <div class="form-group">
-                            <label for="email">البريد الإلكتروني</label>
-                            <input type="email" id="email" name="email" required placeholder="name@company.com">
-                        </div>
+        event.preventDefault();
 
-                        <div class="form-group">
-                            <label for="phone">رقم الجوال</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+966">
-                        </div>
+        target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
 
-                    </div>
+    });
 
-
-                    <div class="form-group">
-                        <label for="service">نوع الاستشارة</label>
-
-                        <select id="service" name="service">
-                            <option value="">اختر نوع الاستشارة</option>
-                            <option>Market Entry</option>
-                            <option>Investment Advisory</option>
-                            <option>Market Intelligence</option>
-                            <option>Business Strategy</option>
-                            <option>Due Diligence</option>
-                            <option>Business Development</option>
-                            <option>Other</option>
-                        </select>
-                    </div>
-
-
-                    <div class="form-group">
-                        <label for="message">كيف يمكننا مساعدتك؟</label>
-
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="5"
-                            placeholder="اكتب نبذة مختصرة عن احتياجك..."
-                        ></textarea>
-                    </div>
-
-
-                    <button type="submit" class="submit-btn">
-                        إرسال طلب الاستشارة
-                        <span>↗</span>
-                    </button>
-
-                    <div id="formMessage" class="form-message"></div>
-
-                </form>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- Footer -->
-    <footer class="footer">
-
-        <div class="container footer-top">
-
-            <div class="footer-brand">
-
-                <a href="#home" class="logo">
-                    <span class="logo-mark">N</span>
-                    <span class="logo-text">NEXORA</span>
-                </a>
-
-                <p>
-                    Strategic Advisory for ambitious businesses entering and growing in Saudi Arabia.
-                </p>
-
-            </div>
-
-
-            <div class="footer-links">
-
-                <div>
-                    <span>Explore</span>
-                    <a href="#about">من نحن</a>
-                    <a href="#services">خدماتنا</a>
-                    <a href="#sectors">القطاعات</a>
-                </div>
-
-                <div>
-                    <span>Contact</span>
-                    <a href="#contact">اطلب استشارة</a>
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="container footer-bottom">
-            <span>© 2026 NEXORA Advisory. All rights reserved.</span>
-            <span>Saudi Arabia</span>
-        </div>
-
-    </footer>
-
-
-    <script src="script.js"></script>
-
-</body>
-</html>
+});
