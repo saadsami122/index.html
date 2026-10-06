@@ -1,170 +1,822 @@
-/* =========================
-   LANGUAGE SWITCHER
-========================= */
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 
-const languageToggle = document.getElementById("languageToggle");
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-let currentLanguage = "ar";
+    <title>NEXORA Advisory | Global Strategy & Expansion</title>
 
-languageToggle.addEventListener("click", () => {
+    <meta
+        name="description"
+        content="NEXORA Advisory helps ambitious companies and investors expand into new markets through strategy, market intelligence and commercial advisory."
+    >
 
-    currentLanguage = currentLanguage === "ar" ? "en" : "ar";
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    document.documentElement.lang = currentLanguage;
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
-    if (currentLanguage === "ar") {
-        document.documentElement.dir = "rtl";
-        document.body.classList.remove("en");
-        languageToggle.textContent = "EN";
-    } else {
-        document.documentElement.dir = "ltr";
-        document.body.classList.add("en");
-        languageToggle.textContent = "AR";
-    }
+    <link rel="stylesheet" href="style.css">
+</head>
 
-    document.querySelectorAll("[data-ar]").forEach(element => {
+<body>
 
-        const arabicText = element.getAttribute("data-ar");
-        const englishText = element.getAttribute("data-en");
+<!-- =========================
+     NAVIGATION
+========================= -->
 
-        if (currentLanguage === "ar") {
-            element.textContent = arabicText;
-        } else {
-            element.textContent = englishText;
-        }
+<header class="navbar">
 
-    });
+    <div class="container nav-inner">
 
-});
+        <a href="#home" class="logo">
+            <span class="logo-mark">N</span>
+            <span class="logo-text">NEXORA</span>
+        </a>
 
+        <nav class="nav-links">
 
-/* =========================
-   CONTACT FORM
-========================= */
+            <a href="#about"
+               data-ar="من نحن"
+               data-en="About">
+                من نحن
+            </a>
 
-const contactForm = document.getElementById("contactForm");
-const formMessage = document.getElementById("formMessage");
+            <a href="#services"
+               data-ar="خدماتنا"
+               data-en="Services">
+                خدماتنا
+            </a>
 
-contactForm.addEventListener("submit", function(event) {
+            <a href="#markets"
+               data-ar="الأسواق"
+               data-en="Markets">
+                الأسواق
+            </a>
 
-    event.preventDefault();
+            <a href="#approach"
+               data-ar="منهجيتنا"
+               data-en="Approach">
+                منهجيتنا
+            </a>
 
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
+            <a href="#contact"
+               data-ar="تواصل معنا"
+               data-en="Contact">
+                تواصل معنا
+            </a>
 
-    if (!name || !email) {
+        </nav>
 
-        formMessage.style.color = "#b33a3a";
+        <div class="nav-actions">
 
-        formMessage.textContent =
-            currentLanguage === "ar"
-                ? "فضلاً أدخل الاسم والبريد الإلكتروني."
-                : "Please enter your name and email.";
+            <button id="languageToggle" class="lang-btn">
+                EN
+            </button>
 
-        return;
-    }
+            <a
+                href="#contact"
+                class="nav-cta"
+                data-ar="اطلب استشارة"
+                data-en="Request Advisory">
+                اطلب استشارة
+            </a>
 
+        </div>
 
-    /*
-        ملاحظة:
+    </div>
 
-        هذا الإصدار Front-End فقط.
-
-        عند ربط الموقع بخدمة استقبال النماذج
-        مثل Formspree أو خدمة Backend خاصة بك،
-        يتم إرسال البيانات هنا إلى الخادم.
-    */
-
-
-    formMessage.style.color = "#0c3b32";
-
-    formMessage.textContent =
-        currentLanguage === "ar"
-            ? "تم استلام طلبك بنجاح. سنتواصل معك قريبًا."
-            : "Your request has been received. We will contact you shortly.";
-
-    contactForm.reset();
-
-});
-
-
-/* =========================
-   NAVBAR SCROLL EFFECT
-========================= */
-
-const navbar = document.querySelector(".navbar");
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 30) {
-        navbar.style.boxShadow = "0 8px 30px rgba(0,0,0,.06)";
-    } else {
-        navbar.style.boxShadow = "none";
-    }
-
-});
+</header>
 
 
-/* =========================
-   REVEAL ANIMATION
-========================= */
+<!-- =========================
+     HERO
+========================= -->
 
-const revealElements = document.querySelectorAll(
-    ".service-card, .sector, .about-grid, .contact-form, .hero-card"
-);
+<main>
 
-const revealObserver = new IntersectionObserver(
-    (entries) => {
+<section id="home" class="hero">
 
-        entries.forEach(entry => {
+    <div class="hero-image"></div>
 
-            if (entry.isIntersecting) {
+    <div class="hero-overlay"></div>
 
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
+    <div class="container hero-content">
 
-                revealObserver.unobserve(entry.target);
-            }
+        <span
+            class="eyebrow"
+            data-ar="استشارات استراتيجية • توسع عالمي • نمو"
+            data-en="STRATEGY • GLOBAL EXPANSION • GROWTH">
+            استشارات استراتيجية • توسع عالمي • نمو
+        </span>
 
-        });
+        <h1
+            data-ar="نحوّل التوسع العالمي إلى استراتيجية قابلة للتنفيذ."
+            data-en="We turn global expansion into executable strategy.">
+            نحوّل التوسع العالمي إلى
+            <span>استراتيجية قابلة للتنفيذ.</span>
+        </h1>
 
-    },
-    {
-        threshold: 0.12
-    }
-);
+        <p
+            data-ar="نساعد الشركات والمستثمرين الطموحين على دخول أسواق جديدة، فهم البيئات التجارية، وبناء استراتيجيات نمو تتجاوز الحدود."
+            data-en="We help ambitious companies and investors enter new markets, understand complex business environments and build growth strategies beyond borders.">
+            نساعد الشركات والمستثمرين الطموحين على دخول أسواق جديدة، فهم البيئات التجارية، وبناء استراتيجيات نمو تتجاوز الحدود.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="#contact"
+                class="btn btn-primary"
+                data-ar="ابدأ محادثة استراتيجية"
+                data-en="Start a Strategic Conversation">
+                ابدأ محادثة استراتيجية
+            </a>
+
+            <a
+                href="#services"
+                class="btn btn-secondary"
+                data-ar="اكتشف خدماتنا"
+                data-en="Explore Our Services">
+                اكتشف خدماتنا
+            </a>
+
+        </div>
+
+        <div class="hero-location">
+            <span>GLOBAL</span>
+            <span>MARKETS</span>
+            <span>STRATEGY</span>
+        </div>
+
+    </div>
+
+</section>
 
 
-revealElements.forEach(element => {
+<!-- =========================
+     ABOUT
+========================= -->
 
-    element.style.opacity = "0";
-    element.style.transform = "translateY(25px)";
-    element.style.transition = "opacity .7s ease, transform .7s ease";
+<section id="about" class="section about-section">
 
-    revealObserver.observe(element);
+    <div class="container">
 
-});
+        <div class="section-heading">
+            <span class="section-number">01</span>
+            <span class="section-label">ABOUT NEXORA</span>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-title">
+
+                <h2
+                    data-ar="عندما تتغير الخريطة، نساعدك على قراءة الاتجاه."
+                    data-en="When the map changes, we help you read the direction.">
+                    عندما تتغير الخريطة،
+                    <em>نساعدك على قراءة الاتجاه.</em>
+                </h2>
+
+            </div>
+
+            <div class="about-text">
+
+                <p
+                    data-ar="NEXORA Advisory منصة استشارية مستقلة تساعد الشركات والمستثمرين على اتخاذ قرارات استراتيجية في الأسواق العالمية."
+                    data-en="NEXORA Advisory is an independent advisory platform helping companies and investors make strategic decisions across global markets.">
+                    NEXORA Advisory منصة استشارية مستقلة تساعد الشركات والمستثمرين على اتخاذ قرارات استراتيجية في الأسواق العالمية.
+                </p>
+
+                <p
+                    data-ar="نعمل عند التقاطع بين الاستراتيجية، أبحاث السوق، الاستثمار والتوسع الدولي، ونركز على تحويل المعلومات المعقدة إلى قرارات واضحة."
+                    data-en="We operate at the intersection of strategy, market intelligence, investment and international expansion, turning complexity into clear decisions.">
+                    نعمل عند التقاطع بين الاستراتيجية، أبحاث السوق، الاستثمار والتوسع الدولي، ونركز على تحويل المعلومات المعقدة إلى قرارات واضحة.
+                </p>
+
+                <div class="about-stats">
+
+                    <div>
+                        <strong>01</strong>
+                        <span>Strategic Thinking</span>
+                    </div>
+
+                    <div>
+                        <strong>02</strong>
+                        <span>Global Perspective</span>
+                    </div>
+
+                    <div>
+                        <strong>03</strong>
+                        <span>Execution Focus</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-/* =========================
-   SMOOTH NAVIGATION
-========================= */
+<!-- =========================
+     IMAGE BREAK
+========================= -->
 
-document.querySelectorAll('a[href^="#"]').forEach(link => {
+<section class="image-break">
 
-    link.addEventListener("click", function(event) {
+    <div class="image-break-content">
 
-        const target = document.querySelector(this.getAttribute("href"));
+        <span>BEYOND BORDERS</span>
 
-        if (!target) return;
+        <h2>
+            Think globally.<br>
+            Move decisively.
+        </h2>
 
-        event.preventDefault();
+    </div>
 
-        target.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
+</section>
 
-    });
 
-});
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section id="services" class="section services-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-number">02</span>
+            <span class="section-label">OUR SERVICES</span>
+        </div>
+
+        <div class="services-intro">
+
+            <h2
+                data-ar="من فرصة جديدة إلى قرار استراتيجي."
+                data-en="From a new opportunity to a strategic decision.">
+                من فرصة جديدة إلى
+                <span>قرار استراتيجي.</span>
+            </h2>
+
+            <p
+                data-ar="نقدم حلولًا استشارية عملية للشركات والمستثمرين الذين يستكشفون أسواقًا جديدة أو يوسعون عملياتهم عالميًا."
+                data-en="We provide practical advisory solutions for companies and investors exploring new markets or expanding internationally.">
+                نقدم حلولًا استشارية عملية للشركات والمستثمرين الذين يستكشفون أسواقًا جديدة أو يوسعون عملياتهم عالميًا.
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+            <article class="service-card">
+
+                <span>01</span>
+
+                <h3>Global Market Entry</h3>
+
+                <p
+                    data-ar="تحديد الأسواق المناسبة وبناء استراتيجية دخول مصممة حسب القطاع والهدف."
+                    data-en="Identify attractive markets and build tailored entry strategies by sector, geography and ambition.">
+                    تحديد الأسواق المناسبة وبناء استراتيجية دخول مصممة حسب القطاع والهدف.
+                </p>
+
+                <div class="arrow">↗</div>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <span>02</span>
+
+                <h3>Market Intelligence</h3>
+
+                <p
+                    data-ar="تحليل الأسواق والمنافسين والعملاء والاتجاهات لدعم القرارات التجارية."
+                    data-en="Analyze markets, competitors, customers and trends to support better commercial decisions.">
+                    تحليل الأسواق والمنافسين والعملاء والاتجاهات لدعم القرارات التجارية.
+                </p>
+
+                <div class="arrow">↗</div>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <span>03</span>
+
+                <h3>Growth Strategy</h3>
+
+                <p
+                    data-ar="تصميم استراتيجيات نمو وتوسع تساعد الشركات على الوصول إلى أسواق وفرص جديدة."
+                    data-en="Design growth and expansion strategies that unlock new markets and commercial opportunities.">
+                    تصميم استراتيجيات نمو وتوسع تساعد الشركات على الوصول إلى أسواق وفرص جديدة.
+                </p>
+
+                <div class="arrow">↗</div>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <span>04</span>
+
+                <h3>Investment Advisory</h3>
+
+                <p
+                    data-ar="دعم المستثمرين في فهم الفرص والأسواق وتقييم الجاذبية التجارية."
+                    data-en="Support investors in understanding opportunities, markets and commercial attractiveness.">
+                    دعم المستثمرين في فهم الفرص والأسواق وتقييم الجاذبية التجارية.
+                </p>
+
+                <div class="arrow">↗</div>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <span>05</span>
+
+                <h3>Commercial Due Diligence</h3>
+
+                <p
+                    data-ar="تحليل السوق والمنافسة ونموذج الأعمال لدعم القرارات الاستثمارية."
+                    data-en="Assess markets, competition and business models to support investment decisions.">
+                    تحليل السوق والمنافسة ونموذج الأعمال لدعم القرارات الاستثمارية.
+                </p>
+
+                <div class="arrow">↗</div>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <span>06</span>
+
+                <h3>Strategic Partnerships</h3>
+
+                <p
+                    data-ar="تطوير استراتيجيات الشراكات والتوسع وبناء العلاقات التجارية في الأسواق المستهدفة."
+                    data-en="Develop partnership and expansion strategies across target markets and commercial ecosystems.">
+                    تطوير استراتيجيات الشراكات والتوسع وبناء العلاقات التجارية في الأسواق المستهدفة.
+                </p>
+
+                <div class="arrow">↗</div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GLOBAL MARKETS
+========================= -->
+
+<section id="markets" class="markets-section">
+
+    <div class="container">
+
+        <div class="section-heading light">
+            <span class="section-number">03</span>
+            <span class="section-label">GLOBAL PERSPECTIVE</span>
+        </div>
+
+        <div class="markets-grid">
+
+            <div class="markets-title">
+
+                <span class="eyebrow">ONE WORLD. MANY OPPORTUNITIES.</span>
+
+                <h2
+                    data-ar="الأسواق لا تتشابه. استراتيجياتنا كذلك."
+                    data-en="Markets are different. Your strategy should be too.">
+                    الأسواق لا تتشابه.
+                    <span>استراتيجياتنا كذلك.</span>
+                </h2>
+
+            </div>
+
+            <div class="markets-text">
+
+                <p
+                    data-ar="نساعد عملاءنا على فهم الاختلافات الاقتصادية والثقافية والتنافسية والتنظيمية بين الأسواق قبل اتخاذ خطوة التوسع."
+                    data-en="We help clients understand the economic, cultural, competitive and regulatory differences between markets before making an expansion move.">
+                    نساعد عملاءنا على فهم الاختلافات الاقتصادية والثقافية والتنافسية والتنظيمية بين الأسواق قبل اتخاذ خطوة التوسع.
+                </p>
+
+                <div class="market-list">
+
+                    <span>Europe</span>
+                    <span>Middle East</span>
+                    <span>Asia</span>
+                    <span>North America</span>
+                    <span>Africa</span>
+                    <span>Oceania</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     APPROACH
+========================= -->
+
+<section id="approach" class="section approach-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-number">04</span>
+            <span class="section-label">OUR APPROACH</span>
+        </div>
+
+        <div class="approach-grid">
+
+            <div class="approach-card">
+
+                <span>01</span>
+
+                <h3>Understand</h3>
+
+                <p>
+                    We start with the market, the ambition and the decision that needs to be made.
+                </p>
+
+            </div>
+
+            <div class="approach-card">
+
+                <span>02</span>
+
+                <h3>Challenge</h3>
+
+                <p>
+                    We test assumptions, identify risks and uncover opportunities others may miss.
+                </p>
+
+            </div>
+
+            <div class="approach-card">
+
+                <span>03</span>
+
+                <h3>Define</h3>
+
+                <p>
+                    We translate insight into a clear strategic direction and actionable priorities.
+                </p>
+
+            </div>
+
+            <div class="approach-card">
+
+                <span>04</span>
+
+                <h3>Execute</h3>
+
+                <p>
+                    We focus on decisions that can move from presentation to real-world execution.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     NETWORK
+========================= -->
+
+<section class="network-section">
+
+    <div class="container">
+
+        <div class="network-content">
+
+            <span class="eyebrow">PROFESSIONAL NETWORK</span>
+
+            <h2>
+                Built around a global<br>
+                <span>advisory mindset.</span>
+            </h2>
+
+            <div class="network-names">
+
+                <span>McKinsey & Company</span>
+                <span>BCG</span>
+                <span>Bain & Company</span>
+
+            </div>
+
+            <small>
+                Names shown for illustrative purposes only and do not imply a formal partnership unless otherwise agreed.
+            </small>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact" class="contact-section">
+
+    <div class="container contact-grid">
+
+        <div class="contact-intro">
+
+            <span class="eyebrow">START A CONVERSATION</span>
+
+            <h2
+                data-ar="لديك سوق جديد؟ فرصة استثمارية؟"
+                data-en="A new market? An investment opportunity?">
+                لديك سوق جديد؟
+                <span>فرصة استثمارية؟</span>
+            </h2>
+
+            <p
+                data-ar="شاركنا احتياجك وسنتواصل معك لمناقشة كيف يمكننا مساعدتك."
+                data-en="Tell us what you are exploring and our team will get in touch to discuss how we can help.">
+                شاركنا احتياجك وسنتواصل معك لمناقشة كيف يمكننا مساعدتك.
+            </p>
+
+        </div>
+
+
+        <form id="contactForm" class="contact-form">
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="name">
+                        الاسم
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        placeholder="اسمك الكامل">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="company">
+                        الشركة
+                    </label>
+
+                    <input
+                        type="text"
+                        id="company"
+                        name="company"
+                        placeholder="اسم الشركة">
+
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="email">
+                        البريد الإلكتروني
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        placeholder="name@company.com">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        رقم الجوال
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="+000">
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="market">
+                    السوق المستهدف
+                </label>
+
+                <input
+                    type="text"
+                    id="market"
+                    name="market"
+                    placeholder="مثال: Europe, Asia, GCC...">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="service">
+                    نوع الاستشارة
+                </label>
+
+                <select id="service" name="service">
+
+                    <option value="">
+                        اختر نوع الاستشارة
+                    </option>
+
+                    <option>
+                        Global Market Entry
+                    </option>
+
+                    <option>
+                        Market Intelligence
+                    </option>
+
+                    <option>
+                        Growth Strategy
+                    </option>
+
+                    <option>
+                        Investment Advisory
+                    </option>
+
+                    <option>
+                        Commercial Due Diligence
+                    </option>
+
+                    <option>
+                        Strategic Partnerships
+                    </option>
+
+                    <option>
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="message">
+                    كيف يمكننا مساعدتك؟
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    placeholder="اكتب نبذة مختصرة عن احتياجك..."></textarea>
+
+            </div>
+
+
+            <button type="submit" class="submit-btn">
+
+                <span
+                    data-ar="إرسال طلب الاستشارة"
+                    data-en="Submit Advisory Request">
+                    إرسال طلب الاستشارة
+                </span>
+
+                <span>↗</span>
+
+            </button>
+
+
+            <div id="formMessage" class="form-message"></div>
+
+        </form>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <div class="container footer-top">
+
+        <div class="footer-brand">
+
+            <a href="#home" class="logo">
+
+                <span class="logo-mark">N</span>
+
+                <span class="logo-text">
+                    NEXORA
+                </span>
+
+            </a>
+
+            <p>
+                Global strategy and advisory for ambitious businesses.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <div>
+
+                <span>Explore</span>
+
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#markets">Markets</a>
+
+            </div>
+
+
+            <div>
+
+                <span>Connect</span>
+
+                <a href="#contact">Request Advisory</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+        <span>
+            © 2026 NEXORA Advisory. All rights reserved.
+        </span>
+
+        <span>
+            Global Advisory
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
